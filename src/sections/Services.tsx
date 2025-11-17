@@ -1,42 +1,43 @@
-import { Card, CardContent } from "@/components/lightswind/card";
+import { GlowingCard } from "@/components/lightswind/glowing-cards";
+import { ShinyText } from "@/components/lightswind/shiny-text";
 
 export default function Services() {
     const services = [
         {
-            icon: "💪",
             title: "Strength Training",
             description: "Build muscle and increase strength with our expert-designed programs and state-of-the-art equipment.",
-            features: ["Free Weights", "Machines", "Personal Training"]
+            features: ["Free Weights", "Machines", "Personal Training"],
+            image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80"
         },
         {
-            icon: "🏃",
             title: "Cardio Zone",
             description: "Improve endurance and burn calories with our extensive cardio equipment and high-energy classes.",
-            features: ["Treadmills", "Bikes", "Rowing Machines"]
+            features: ["Treadmills", "Bikes", "Rowing Machines"],
+            image: "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800&q=80"
         },
         {
-            icon: "🧘",
             title: "Yoga & Flexibility",
             description: "Enhance flexibility, balance, and mental wellness through our yoga and stretching programs.",
-            features: ["Hatha Yoga", "Power Yoga", "Meditation"]
+            features: ["Hatha Yoga", "Power Yoga", "Meditation"],
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80"
         },
         {
-            icon: "🥊",
             title: "Boxing & MMA",
             description: "Learn self-defense while getting an intense full-body workout with our combat sports training.",
-            features: ["Boxing", "Kickboxing", "MMA Fundamentals"]
+            features: ["Boxing", "Kickboxing", "MMA Fundamentals"],
+            image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&q=80"
         },
         {
-            icon: "👨‍🏫",
             title: "Personal Training",
             description: "One-on-one coaching tailored to your specific fitness goals with certified personal trainers.",
-            features: ["Custom Plans", "Progress Tracking", "Nutrition Guidance"]
+            features: ["Custom Plans", "Progress Tracking", "Nutrition Guidance"],
+            image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80"
         },
         {
-            icon: "👥",
             title: "Group Classes",
             description: "Stay motivated with high-energy group fitness classes led by experienced instructors.",
-            features: ["Zumba", "Spin", "HIIT"]
+            features: ["Zumba", "Spin", "HIIT"],
+            image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80"
         }
     ];
 
@@ -63,50 +64,52 @@ export default function Services() {
                 {/* Services Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
-                        <Card
+                        <GlowingCard
                             key={index}
-                            className="group hover:shadow-xl transition-all duration-300 hover:scale-105 border-border bg-card"
+                            className="group relative overflow-hidden border-border h-[420px]"
+                            glowColor="#3b82f6"
                         >
-                            <CardContent className="p-6 space-y-4">
-                                {/* Icon */}
-                                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-4xl group-hover:bg-primary/20 transition-colors">
-                                    {service.icon}
+                            {/* Background Image with Overlay */}
+                            <div
+                                className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+                                style={{ backgroundImage: `url(${service.image})` }}
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30"></div>
+                            </div>
+
+                            {/* Content */}
+                            <div className="relative h-full flex flex-col justify-end p-6 text-white">
+                                <div className="space-y-4">
+                                    {/* Title */}
+                                    <h3 className="text-2xl font-bold">
+                                        <ShinyText
+                                            speed={3}
+                                            className="text-2xl font-bold"
+                                            baseColor="#ffffff"
+                                            shineColor="#ff6b35"
+                                        >
+                                            {service.title}
+                                        </ShinyText>
+                                    </h3>
+
+                                    {/* Description */}
+                                    <p className="text-white/90 text-sm leading-relaxed">
+                                        {service.description}
+                                    </p>
+
+                                    {/* Features */}
+                                    <div className="space-y-2">
+                                        {service.features.map((feature, idx) => (
+                                            <div key={idx} className="flex items-center space-x-2">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                                                <span className="text-sm text-white/80">{feature}</span>
+                                            </div>
+                                        ))}
+                                        <span className="text-sm text-white/60 italic">and more...</span>
+                                    </div>
                                 </div>
-
-                                {/* Title */}
-                                <h3 className="text-2xl font-bold text-foreground">
-                                    {service.title}
-                                </h3>
-
-                                {/* Description */}
-                                <p className="text-muted-foreground">
-                                    {service.description}
-                                </p>
-
-                                {/* Features */}
-                                <div className="pt-4 space-y-2">
-                                    {service.features.map((feature, idx) => (
-                                        <div key={idx} className="flex items-center space-x-2">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                                            <span className="text-sm text-foreground">{feature}</span>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Learn More Link */}
-                                <div className="pt-4">
-                                    <a
-                                        href="#contact"
-                                        className="text-primary font-semibold flex items-center space-x-2 group-hover:translate-x-2 transition-transform"
-                                    >
-                                        <span>Learn More</span>
-                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </CardContent>
-                        </Card>
+                            </div>
+                        </GlowingCard>
                     ))}
                 </div>
 

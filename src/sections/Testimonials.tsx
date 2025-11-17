@@ -122,33 +122,6 @@ export default function Testimonials() {
                         </Card>
                     ))}
                 </div>
-
-                {/* CTA Section */}
-                <div className="mt-16 text-center bg-card border border-border rounded-3xl p-12 shadow-lg">
-                    <div className="max-w-2xl mx-auto space-y-6">
-                        <h3 className="text-3xl font-bold text-foreground">
-                            Ready to Write Your Own Success Story?
-                        </h3>
-                        <p className="text-lg text-muted-foreground">
-                            Join AJ Fitness Studio today and start your transformation journey.
-                            Our team is ready to help you achieve your goals!
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                            <a
-                                href="#pricing"
-                                className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-                            >
-                                View Membership Plans
-                            </a>
-                            <a
-                                href="#contact"
-                                className="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors"
-                            >
-                                Book a Free Tour
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     );

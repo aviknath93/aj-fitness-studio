@@ -1,6 +1,6 @@
 import { GlowingCards, GlowingCard } from "@/components/lightswind/glowing-cards";
 
-export default function Pricing() {
+export default function Contact() {
     // Default location (you can change this to your actual gym location)
     const gymLocation = {
         lat: 40.7580,
@@ -52,7 +52,7 @@ export default function Pricing() {
     ];
 
     return (
-        <section id="pricing" className="py-16 bg-background">
+        <section id="contact" className="py-16 bg-background">
             <div className="container mx-auto px-4">
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
