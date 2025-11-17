@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @plugin 'lightswind/plugin';
 
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
 /* AJ Fitness Studio Custom Theme */
 :root {
   /* Primary Colors - Orange Theme */

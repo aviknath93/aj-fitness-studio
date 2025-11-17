@@ -1,29 +1,23 @@
-import { Button } from "@/components/lightswind/button";
-import { Input } from "@/components/lightswind/input";
-import { Link } from "react-router-dom";
-
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     const footerLinks = {
         company: [
-            { name: "About Us", href: "/about" },
-            { name: "Our Team", href: "/about" },
-            { name: "Careers", href: "/contact" },
-            { name: "Contact", href: "/contact" }
-        ],
-        services: [
-            { name: "Personal Training", href: "/services" },
-            { name: "Group Classes", href: "/services" },
-            { name: "Nutrition Plans", href: "/services" },
-            { name: "Online Coaching", href: "/services" }
-        ],
-        support: [
-            { name: "Help Center", href: "/contact" },
-            { name: "FAQs", href: "/pricing" },
-            { name: "Membership Terms", href: "/pricing" },
-            { name: "Privacy Policy", href: "/contact" }
+            { name: "Home", href: "#hero" },
+            { name: "About Us", href: "#about" },
+            { name: "Services", href: "#services" },
+            { name: "Testimonials", href: "#testimonials" },
+            { name: "Contact", href: "#pricing" }
         ]
+    };
+
+    const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+        e.preventDefault();
+        const element = document.querySelector(path);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.history.pushState(null, '', path);
+        }
     };
 
     const socialLinks = [
@@ -62,12 +56,12 @@ export default function Footer() {
     ];
 
     return (
-        <footer id="contact" className="bg-secondary text-white">
+        <footer id="contact" className="bg-black text-white">
             {/* Main Footer Content */}
             <div className="container mx-auto px-4 py-16">
-                <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 items-start">
                     {/* Brand Section */}
-                    <div className="lg:col-span-2 space-y-6">
+                    <div className="space-y-6 md:col-span-2">
                         <div className="flex items-center space-x-2">
                             <div className="w-12 h-12 bg-gradient-gym rounded-lg flex items-center justify-center">
                                 <span className="text-white font-bold text-2xl">AJ</span>
@@ -78,73 +72,25 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        <p className="text-gray-300 leading-relaxed">
+                        <p className="text-gray-300 leading-relaxed max-w-md">
                             Transform your life with AJ Fitness Studio. State-of-the-art facilities,
                             expert trainers, and a supportive community to help you achieve your fitness goals.
                         </p>
-
-                        {/* Newsletter */}
-                        <div className="space-y-3">
-                            <h3 className="font-semibold text-lg">Subscribe to Our Newsletter</h3>
-                            <div className="flex gap-2">
-                                <Input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    className="bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-                                />
-                                <Button className="bg-primary hover:bg-primary/90 shrink-0">
-                                    Subscribe
-                                </Button>
-                            </div>
-                        </div>
                     </div>
 
-                    {/* Company Links */}
-                    <div>
-                        <h3 className="font-semibold text-lg mb-4">Company</h3>
-                        <ul className="space-y-3">
+                    {/* Quick Links */}
+                    <div className="md:col-span-2">
+                        <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+                        <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
                             {footerLinks.company.map((link, index) => (
                                 <li key={index}>
-                                    <Link
-                                        to={link.href}
+                                    <a
+                                        href={link.href}
+                                        onClick={(e) => handleAnchorClick(e, link.href)}
                                         className="text-gray-300 hover:text-primary transition-colors"
                                     >
                                         {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Services Links */}
-                    <div>
-                        <h3 className="font-semibold text-lg mb-4">Services</h3>
-                        <ul className="space-y-3">
-                            {footerLinks.services.map((link, index) => (
-                                <li key={index}>
-                                    <Link
-                                        to={link.href}
-                                        className="text-gray-300 hover:text-primary transition-colors"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Support Links */}
-                    <div>
-                        <h3 className="font-semibold text-lg mb-4">Support</h3>
-                        <ul className="space-y-3">
-                            {footerLinks.support.map((link, index) => (
-                                <li key={index}>
-                                    <Link
-                                        to={link.href}
-                                        className="text-gray-300 hover:text-primary transition-colors"
-                                    >
-                                        {link.name}
-                                    </Link>
+                                    </a>
                                 </li>
                             ))}
                         </ul>

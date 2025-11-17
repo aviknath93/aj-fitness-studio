@@ -29,14 +29,26 @@ export default function Header() {
     const location = useLocation();
 
     const menuItems = [
-        { name: "Shop", path: "/" },
-        { name: "Browser", path: "/services" },
-        { name: "About Us", path: "/about" },
-        { name: "FAQ", path: "/contact" },
+        { name: "Home", path: "#hero" },
+        { name: "About", path: "#about" },
+        { name: "Services", path: "#services" },
+        { name: "Testimonials", path: "#testimonials" },
+        { name: "Contact", path: "#pricing" },
     ];
 
     const isActive = (path: string) => {
-        return location.pathname === path;
+        const hash = location.hash || "#hero";
+        return hash === path;
+    };
+
+    const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+        e.preventDefault();
+        const element = document.querySelector(path);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.history.pushState(null, '', path);
+        }
+        setIsMenuOpen(false);
     };
 
     return (
@@ -53,9 +65,10 @@ export default function Header() {
                 {/* Desktop Menu Items */}
                 <nav className="hidden md:flex gap-4 lg:gap-8 font-medium text-xs font-inter backdrop-blur-sm bg-white/10 rounded-full px-8 py-4 mx-auto relative">
                     {menuItems.map((item) => (
-                        <Link
+                        <a
                             key={item.name}
-                            to={item.path}
+                            href={item.path}
+                            onClick={(e) => handleAnchorClick(e, item.path)}
                             className={`relative hover:text-white transition-colors group ${isActive(item.path) ? "text-white" : "text-gray-300"
                                 }`}
                         >
@@ -66,7 +79,7 @@ export default function Header() {
                                     : "w-0 group-hover:w-full group-hover:translate-y-0 transform translate-y-full"
                                     }`}
                             ></span>
-                        </Link>
+                        </a>
                     ))}
                 </nav>
 
@@ -103,14 +116,14 @@ export default function Header() {
 
                 <nav className="flex flex-col gap-4 text-lg font-medium">
                     {menuItems.map((item) => (
-                        <Link
+                        <a
                             key={item.name}
-                            to={item.path}
+                            href={item.path}
+                            onClick={(e) => handleAnchorClick(e, item.path)}
                             className="block px-3 py-2 rounded-md hover:bg-white/10 transition-colors text-white"
-                            onClick={() => setIsMenuOpen(false)}
                         >
                             {item.name}
-                        </Link>
+                        </a>
                     ))}
                 </nav>
 
