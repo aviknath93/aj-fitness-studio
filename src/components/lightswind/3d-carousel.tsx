@@ -1,5 +1,4 @@
 // components/ThreeDCarousel.tsx
-"use client";
 
 import React, {
   useRef,
@@ -7,10 +6,21 @@ import React, {
   useState,
   TouchEvent,
 } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-import { Card, CardContent } from "@/app/component2/ui/card";
+import { Card, CardContent } from "./card";
 import { useIsMobile } from "../hooks/use-mobile";
-import Link from "next/link";
+import { Link } from "react-router-dom";
+
+const ChevronLeft = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="m15 18-6-6 6-6" />
+  </svg>
+)
+
+const ChevronRight = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="m9 18 6-6-6-6" />
+  </svg>
+)
 
 export interface ThreeDCarouselItem {
   id: number;
@@ -108,7 +118,7 @@ const ThreeDCarousel = ({
       min-w-[350px] md:min-w-[1000px] max-w-7xl  "
       >
         <div
-          className="relative overflow-hidden h-[550px] "
+          className="relative overflow-hidden h-[420px]"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
           onTouchStart={onTouchStart}
@@ -128,60 +138,40 @@ const ThreeDCarousel = ({
                   className={`overflow-hidden bg-background h-[${cardHeight}px] border shadow-sm 
                 hover:shadow-md flex flex-col`}
                 >
-                  <div
-                    className="relative bg-black p-6 flex items-center justify-center h-48 overflow-hidden"
-                    style={{
-                      backgroundImage: `url(${item.imageUrl})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    <div className="absolute inset-0 bg-black/50" />
-                    <div className="relative z-10 text-center text-white">
-                      <h3 className="text-2xl font-bold mb-2">
-                        {item.brand.toUpperCase()}
-                      </h3>
-                      <div className="w-12 h-1 bg-white mx-auto mb-2" />
-                      <p className="text-sm ">{item.title}</p>
+                  <CardContent className="p-6 flex flex-col h-full justify-center">
+                    {/* Quote Icon */}
+                    <div className="mb-3">
+                      <svg className="w-8 h-8 text-primary/30" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                      </svg>
                     </div>
-                  </div>
 
-                  <CardContent className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold mb-1 text-foreground">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm font-medium mb-2">
-                      {item.brand}
-                    </p>
-                    <p className="text-gray-600 text-sm flex-grow">
-                      {item.description}
+                    {/* Testimonial Text */}
+                    <p className="text-foreground text-base leading-relaxed mb-4 flex-grow italic">
+                      "{item.description}"
                     </p>
 
-                    <div className="mt-4">
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {item.tags.map((tag, idx) => (
-                          <span
-                            key={idx}
-                            className="px-2 py-1 bg-gray-50 text-gray-600 rounded-full text-xs animate-pulse-slow"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                    {/* Author Info */}
+                    <div className="border-t border-border pt-3">
+                      <h3 className="text-lg font-bold text-foreground">
+                        {item.title}
+                      </h3>
+                      <p className="text-primary text-sm font-medium">
+                        {item.brand}
+                      </p>
+                    </div>
+
+                    {/* Tags */}
+                    <div className="mt-3">
+                      <div className="flex flex-wrap gap-1.5">{item.tags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs font-semibold"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                       </div>
-
-                      <a
-                        href={item.link}
-                        className="text-gray-500 flex items-center hover:underline relative group"
-                        onClick={() => {
-                          if (item.link.startsWith("/")) {
-                            window.scrollTo(0, 0);
-                          }
-                        }}
-                      >
-                        <span className="relative z-10">Learn more</span>
-                        <ArrowRight className="ml-2 w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
-                        <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gray-500 transition-all duration-300 group-hover:w-full"></span>
-                      </a>
                     </div>
                   </CardContent>
                 </Card>
@@ -214,11 +204,10 @@ const ThreeDCarousel = ({
             {items.map((_, idx) => (
               <button
                 key={idx}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  active === idx
-                    ? "bg-gray-500 w-5"
-                    : "bg-gray-200 hover:bg-gray-300"
-                }`}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${active === idx
+                  ? "bg-gray-500 w-5"
+                  : "bg-gray-200 hover:bg-gray-300"
+                  }`}
                 onClick={() => setActive(idx)}
                 aria-label={`Go to item ${idx + 1}`}
               />
