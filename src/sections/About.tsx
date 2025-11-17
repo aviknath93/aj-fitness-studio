@@ -1,0 +1,105 @@
+import { Card, CardContent } from "@/components/lightswind/card";
+
+export default function About() {
+    const features = [
+        {
+            icon: "🏢",
+            title: "Modern Facilities",
+            description: "10,000 sq ft of premium equipment and training space"
+        },
+        {
+            icon: "⏰",
+            title: "24/7 Access",
+            description: "Train on your schedule, any time of day or night"
+        },
+        {
+            icon: "👥",
+            title: "Expert Trainers",
+            description: "Certified professionals dedicated to your success"
+        },
+        {
+            icon: "🎯",
+            title: "Personalized Plans",
+            description: "Custom fitness programs tailored to your goals"
+        }
+    ];
+
+    return (
+        <section id="about" className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Left Content */}
+                    <div className="space-y-6">
+                        <div className="inline-block">
+                            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
+                                About Us
+                            </span>
+                        </div>
+
+                        <h2 className="text-4xl md:text-5xl font-bold">
+                            Your Journey to a{" "}
+                            <span className="text-gradient-gym">Healthier Life</span>
+                        </h2>
+
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                            At AJ Fitness Studio, we believe fitness is more than just a workout—it's a
+                            lifestyle. Since our founding, we've been committed to providing a welcoming
+                            environment where everyone can achieve their fitness goals, regardless of their
+                            starting point.
+                        </p>
+
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                            Our state-of-the-art facility features the latest equipment, expert trainers,
+                            and a supportive community that will motivate you every step of the way. Whether
+                            you're looking to lose weight, build muscle, improve flexibility, or simply feel
+                            better, we're here to help you succeed.
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-4 pt-4">
+                            {features.map((feature, index) => (
+                                <div key={index} className="flex items-start space-x-3">
+                                    <div className="text-2xl">{feature.icon}</div>
+                                    <div>
+                                        <h4 className="font-semibold text-foreground">{feature.title}</h4>
+                                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Right Content */}
+                    <div className="grid grid-cols-2 gap-4">
+                        <Card className="bg-gradient-gym text-white border-0">
+                            <CardContent className="p-6 space-y-2">
+                                <div className="text-4xl font-bold">500+</div>
+                                <div className="text-sm">Happy Members</div>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="bg-card border-border mt-8">
+                            <CardContent className="p-6 space-y-2">
+                                <div className="text-4xl font-bold text-primary">50+</div>
+                                <div className="text-sm text-muted-foreground">Expert Trainers</div>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="bg-card border-border -mt-8">
+                            <CardContent className="p-6 space-y-2">
+                                <div className="text-4xl font-bold text-primary">10K+</div>
+                                <div className="text-sm text-muted-foreground">Sessions Monthly</div>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="bg-secondary text-white border-0">
+                            <CardContent className="p-6 space-y-2">
+                                <div className="text-4xl font-bold">5+</div>
+                                <div className="text-sm">Years Experience</div>
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}

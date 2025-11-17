@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@plugin 'lightswind/plugin';
+
+/* AJ Fitness Studio Custom Theme */
+:root {
+  /* Primary Colors - Orange Theme */
+  --primarylw: #ff6b35;
+  --primarylw-2: #ff8555;
+  --darklw: #1a1a1a;
+  --darklw-2: #2d2d2d;
+
+  /* Base Theme Colors (HSL format) */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 10%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+
+  --primary: 16 100% 60%; /* Orange */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 45%; /* Grey */
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 40%;
+
+  --accent: 16 100% 60%; /* Orange accent */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 88%;
+  --input: 0 0% 88%;
+  --ring: 16 100% 60%;
+
+  --radius: 0.5rem;
+
+  --scrollbar-thumb: 0 0% 70%;
+  --scrollbar-track: 0 0% 95%;
+  --scrollbar-hover: 16 100% 60%;
+}
+
+/* Dark Theme */
+.dark {
+  --primarylw: #ff6b35;
+  --primarylw-2: #ff8555;
+  --darklw: #0a0a0a;
+  --darklw-2: #1a1a1a;
+
+  --background: 0 0% 8%;
+  --foreground: 0 0% 95%;
+
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 95%;
+
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 95%;
+
+  --primary: 16 100% 60%; /* Orange */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 20%; /* Dark Grey */
+  --secondary-foreground: 0 0% 95%;
+
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 60%;
+
+  --accent: 16 100% 60%; /* Orange accent */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 20%;
+  --input: 0 0% 18%;
+  --ring: 16 100% 60%;
+
+  --scrollbar-thumb: 0 0% 30%;
+  --scrollbar-track: 0 0% 12%;
+  --scrollbar-hover: 16 100% 60%;
+}
+
+/* Custom Utility Classes for Gym Theme */
+.bg-gradient-gym {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--secondary)) 100%
+  );
+}
+
+.text-gradient-gym {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

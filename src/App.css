@@ -1,0 +1,39 @@
+/* AJ Fitness Studio - Main App Styles */
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--scrollbar-track));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--scrollbar-thumb));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--scrollbar-hover));
+}
+
+/* Animation for scroll indicator */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    transform: translateY(10px) translateX(-50%);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
