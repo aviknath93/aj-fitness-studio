@@ -1,4 +1,4 @@
-import { motion, Easing } from "framer-motion";
+import { motion, type Easing } from "framer-motion";
 import { cn } from "../lib/utils"; // Assuming you have a utility for class name concatenation
 import { useState, useEffect } from "react"; // Import useState and useEffect
 
@@ -72,7 +72,6 @@ const TopStickyBar = ({
   // Effect to manage scroll-based visibility
   useEffect(() => {
     if (!showOnScroll) {
-      setInternalShow(externalShow); // If not scroll-controlled, use external prop
       return;
     }
 
@@ -88,9 +87,8 @@ const TopStickyBar = ({
     // Call once on mount to set initial state based on current scroll
     handleScroll();
 
-    return () => window.
-removeEventListener("scroll", handleScroll);
-  }, [showOnScroll, scrollThreshold, externalShow]); // Re-run if these props change
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [showOnScroll, scrollThreshold]); // Re-run if these props change
 
   // Determine the final `show` value
   const finalShow = showOnScroll ? internalShow : externalShow;

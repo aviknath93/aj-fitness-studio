@@ -119,8 +119,15 @@ export default function Services() {
                         Not sure which program is right for you?
                     </p>
                     <a
-                        href="#contact"
-                        className="inline-flex items-center space-x-2 text-primary font-semibold text-lg hover:underline"
+                        href="#pricing"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.querySelector('#pricing');
+                            if (element) {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }}
+                        className="inline-flex items-center space-x-2 text-primary font-semibold text-lg hover:underline cursor-pointer"
                     >
                         <span>Schedule a Free Consultation</span>
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

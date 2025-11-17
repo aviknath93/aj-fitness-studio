@@ -24,8 +24,15 @@ const ArrowUpRightIcon = (props: React.SVGProps<SVGSVGElement>) => (
 export default function Hero() {
     const { content } = useHeroContent();
 
+    const handleScrollToContact = () => {
+        const element = document.querySelector('#pricing');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
-        <section className="relative w-full min-h-screen overflow-hidden bg-black text-white flex flex-col font-inter">
+        <section id="hero" className="relative w-full min-h-screen overflow-hidden bg-black text-white flex flex-col font-inter">
             {/* Background Gym Image */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -65,7 +72,10 @@ export default function Hero() {
                 </p>
 
                 {/* Explore Button */}
-                <Button className="mt-8 px-6 py-3 rounded-full bg-primary hover:bg-primary/90 text-white text-sm font-medium flex items-center justify-center gap-2 transition-colors duration-300 ease-in-out font-inter">
+                <Button
+                    onClick={handleScrollToContact}
+                    className="mt-8 px-6 py-3 rounded-full bg-primary hover:bg-primary/90 text-white text-sm font-medium flex items-center justify-center gap-2 transition-colors duration-300 ease-in-out font-inter"
+                >
                     {content.cta.text}
                     <ArrowUpRightIcon className="w-4 h-4" />
                 </Button>
