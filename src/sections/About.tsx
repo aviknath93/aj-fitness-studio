@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/lightswind/card";
+import { GlowingCards, GlowingCard } from "@/components/lightswind/glowing-cards";
 
 export default function About() {
     const features = [
@@ -54,50 +54,26 @@ export default function About() {
                             you're looking to lose weight, build muscle, improve flexibility, or simply feel
                             better, we're here to help you succeed.
                         </p>
+                    </div>
 
-                        <div className="grid grid-cols-2 gap-4 pt-4">
-                            {features.map((feature, index) => (
-                                <div key={index} className="flex items-start space-x-3">
-                                    <div className="text-2xl">{feature.icon}</div>
-                                    <div>
-                                        <h4 className="font-semibold text-foreground">{feature.title}</h4>
-                                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    {/* Right Content - Features */}
+                    <GlowingCards className="space-y-6" enableGlow={true} glowRadius={30}>
+                        {features.map((feature, index) => (
+                            <GlowingCard
+                                key={index}
+                                className="border-border h-[200px]"
+                                glowColor="#ff6b35"
+                            >
+                                <div className="flex items-start space-x-4 h-full">
+                                    <div className="text-4xl flex-shrink-0">{feature.icon}</div>
+                                    <div className="space-y-2 flex-1">
+                                        <h4 className="text-xl font-semibold text-foreground leading-tight">{feature.title}</h4>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Right Content */}
-                    <div className="grid grid-cols-2 gap-4">
-                        <Card className="bg-gradient-gym text-white border-0">
-                            <CardContent className="p-6 space-y-2">
-                                <div className="text-4xl font-bold">500+</div>
-                                <div className="text-sm">Happy Members</div>
-                            </CardContent>
-                        </Card>
-
-                        <Card className="bg-card border-border mt-8">
-                            <CardContent className="p-6 space-y-2">
-                                <div className="text-4xl font-bold text-primary">50+</div>
-                                <div className="text-sm text-muted-foreground">Expert Trainers</div>
-                            </CardContent>
-                        </Card>
-
-                        <Card className="bg-card border-border -mt-8">
-                            <CardContent className="p-6 space-y-2">
-                                <div className="text-4xl font-bold text-primary">10K+</div>
-                                <div className="text-sm text-muted-foreground">Sessions Monthly</div>
-                            </CardContent>
-                        </Card>
-
-                        <Card className="bg-secondary text-white border-0">
-                            <CardContent className="p-6 space-y-2">
-                                <div className="text-4xl font-bold">5+</div>
-                                <div className="text-sm">Years Experience</div>
-                            </CardContent>
-                        </Card>
-                    </div>
+                            </GlowingCard>
+                        ))}
+                    </GlowingCards>
                 </div>
             </div>
         </section>

@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "title": {
+      "line1": "Unleash Your Potential",
+      "line2": "Welcome to",
+      "highlight": "AJ Fitness Studio"
+    },
+    "description": "Experience the ultimate transformation with our state-of-the-art equipment, expert trainers, and motivating community",
+    "cta": {
+      "text": "Start Your Journey",
+      "link": "/contact"
+    },
+    "stats": [
+      {
+        "value": 100,
+        "suffix": "+",
+        "label": "Active Members"
+      },
+      {
+        "value": 10,
+        "suffix": "+",
+        "label": "Expert Trainers"
+      },
+      {
+        "value": 50,
+        "suffix": "+",
+        "label": "Classes Weekly"
+      },
+      {
+        "value": 15,
+        "suffix": "+",
+        "label": "Years of Experience"
+      }
+    ],
+    "backgroundImage": "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Your fitness journey starts here",
+    "description": "We are dedicated to helping you achieve your fitness goals with personalized training programs and state-of-the-art facilities.",
+    "images": [
+      "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
+      "https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg",
+      "https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg",
+      "https://images.pexels.com/photos/3490348/pexels-photo-3490348.jpeg",
+      "https://images.pexels.com/photos/3768593/pexels-photo-3768593.jpeg"
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Everything you need to transform",
+    "items": [
+      {
+        "title": "Personal Training",
+        "description": "One-on-one coaching tailored to your goals",
+        "icon": "dumbbell"
+      },
+      {
+        "title": "Group Classes",
+        "description": "High-energy workouts with our community",
+        "icon": "users"
+      },
+      {
+        "title": "Nutrition Guidance",
+        "description": "Expert advice for optimal results",
+        "icon": "apple"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Membership Plans",
+    "subtitle": "Choose the plan that fits your lifestyle",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": 29,
+        "period": "month",
+        "features": [
+          "Access to gym equipment",
+          "Locker room access",
+          "Free WiFi"
+        ]
+      },
+      {
+        "name": "Premium",
+        "price": 59,
+        "period": "month",
+        "featured": true,
+        "features": [
+          "Everything in Basic",
+          "Unlimited group classes",
+          "Nutrition consultation",
+          "Free parking"
+        ]
+      },
+      {
+        "name": "Elite",
+        "price": 99,
+        "period": "month",
+        "features": [
+          "Everything in Premium",
+          "Personal training sessions",
+          "Priority class booking",
+          "Guest passes"
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Members Say",
+    "subtitle": "Real stories from real people",
+    "items": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Member since 2023",
+        "content": "AJ Fitness Studio changed my life! The trainers are amazing and the community is so supportive.",
+        "rating": 5
+      },
+      {
+        "name": "Mike Chen",
+        "role": "Member since 2022",
+        "content": "Best gym I've ever joined. The facilities are top-notch and the staff really cares about your progress.",
+        "rating": 5
+      },
+      {
+        "name": "Emily Rodriguez",
+        "role": "Member since 2024",
+        "content": "The group classes are incredible! I've never felt more motivated to work out.",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to start your fitness journey?",
+    "address": "123 Fitness Street, City, State 12345",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@ajfitnessstudio.com",
+    "hours": {
+      "weekdays": "Mon-Fri: 6:00 AM - 10:00 PM",
+      "weekends": "Sat-Sun: 8:00 AM - 8:00 PM"
+    }
+  }
+}
