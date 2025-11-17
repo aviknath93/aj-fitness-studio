@@ -3,12 +3,12 @@ import { GlowingCards, GlowingCard } from "@/components/lightswind/glowing-cards
 export default function Pricing() {
     // Default location (you can change this to your actual gym location)
     const gymLocation = {
-        lat: 40.7580,
-        lng: -73.9855,
+        lat: 22.4378,
+        lng: 88.3859,
         name: "AJ Fitness Studio",
-        address: "123 Fitness Street, New York, NY 10001",
-        phone: "+1 (555) 123-4567",
-        email: "info@ajfitness.com"
+        address: "Vivekananda Pally, Harinavi, Rajpur Sonarpur, West Bengal 700148",
+        phone: "+91 8509481388",
+        email: "ajfitnessstudio@gmail.com"
     };
 
     const contactInfo = [

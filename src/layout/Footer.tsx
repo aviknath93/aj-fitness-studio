@@ -107,8 +107,8 @@ export default function Footer() {
                         <div>
                             <h4 className="font-semibold mb-1">Visit Us</h4>
                             <p className="text-gray-300 text-sm">
-                                123 Fitness Street<br />
-                                New York, NY 10001
+                                Vivekananda Pally, Harinavi<br />
+                                Rajpur Sonarpur, West Bengal 700148
                             </p>
                         </div>
                     </div>
@@ -120,7 +120,7 @@ export default function Footer() {
                         <div>
                             <h4 className="font-semibold mb-1">Call Us</h4>
                             <p className="text-gray-300 text-sm">
-                                +1 (555) 123-4567<br />
+                                +91 8509481388<br />
                                 Mon-Fri: 6AM - 10PM
                             </p>
                         </div>
@@ -133,8 +133,7 @@ export default function Footer() {
                         <div>
                             <h4 className="font-semibold mb-1">Email Us</h4>
                             <p className="text-gray-300 text-sm">
-                                info@ajfitness.com<br />
-                                support@ajfitness.com
+                                ajfitnessstudio@gmail.com
                             </p>
                         </div>
                     </div>

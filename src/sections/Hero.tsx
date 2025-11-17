@@ -81,7 +81,7 @@ export default function Hero() {
                 </Button>
 
                 {/* Stats Section */}
-                <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl">
+                <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl">
                     {content.stats.map((stat, index) => (
                         <div key={index} className="space-y-2">
                             <div className="text-3xl md:text-5xl font-bold">

@@ -94,7 +94,7 @@ export default function ContactPage() {
                                                 type="tel"
                                                 value={formData.phone}
                                                 onChange={handleChange}
-                                                placeholder="+1 (555) 123-4567"
+                                                placeholder="+91 8509481388"
                                                 className="w-full"
                                             />
                                         </div>
@@ -163,8 +163,8 @@ export default function ContactPage() {
                                             <div>
                                                 <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
                                                 <p className="text-muted-foreground">
-                                                    123 Fitness Street<br />
-                                                    New York, NY 10001
+                                                    Vivekananda Pally, Harinavi<br />
+                                                    Rajpur Sonarpur, West Bengal 700148
                                                 </p>
                                             </div>
                                         </div>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                                             <div>
                                                 <h3 className="font-semibold text-foreground mb-1">Call Us</h3>
                                                 <p className="text-muted-foreground">
-                                                    +1 (555) 123-4567<br />
+                                                    +91 8509481388<br />
                                                     Mon-Fri: 6AM - 10PM<br />
                                                     Sat-Sun: 8AM - 8PM
                                                 </p>
@@ -202,8 +202,7 @@ export default function ContactPage() {
                                             <div>
                                                 <h3 className="font-semibold text-foreground mb-1">Email Us</h3>
                                                 <p className="text-muted-foreground">
-                                                    info@ajfitness.com<br />
-                                                    support@ajfitness.com
+                                                    ajfitnessstudio@gmail.com
                                                 </p>
                                             </div>
                                         </div>

@@ -6,9 +6,9 @@ export default function Contact() {
         lat: 40.7580,
         lng: -73.9855,
         name: "AJ Fitness Studio",
-        address: "123 Fitness Street, New York, NY 10001",
-        phone: "+1 (555) 123-4567",
-        email: "info@ajfitness.com"
+        address: "Vivekananda Pally, Harinavi, Rajpur Sonarpur, West Bengal 700148",
+        phone: "+91 8509481388",
+        email: "ajfitnessstudio@gmail.com"
     };
 
     const contactInfo = [
