@@ -56,9 +56,6 @@ export default function Header() {
             <div className="flex justify-between items-center w-full px-4 md:px-10 py-6">
                 {/* Logo */}
                 <Link to="/" className="text-base lg:text-lg font-bold tracking-tight flex items-center gap-2 font-inter text-gray-400 z-50">
-                    <div className="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm">
-                        A
-                    </div>
                     <span className="text-gray-300">AJ FITNESS</span> <span className="text-gray-400">STUDIO</span>
                 </Link>
 

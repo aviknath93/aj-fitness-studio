@@ -22,10 +22,10 @@ export default function Services() {
             image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80"
         },
         {
-            title: "Boxing & MMA",
-            description: "Learn self-defense while getting an intense full-body workout with our combat sports training.",
-            features: ["Boxing", "Kickboxing", "MMA Fundamentals"],
-            image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&q=80"
+            title: "CrossFit & Functional Training",
+            description: "Build real-world strength and conditioning with dynamic functional movements and HIIT workouts.",
+            features: ["CrossFit", "Functional Movement", "HIIT Training"],
+            image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80"
         },
         {
             title: "Personal Training",
