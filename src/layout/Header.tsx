@@ -52,7 +52,7 @@ export default function Header() {
     };
 
     return (
-        <header className="absolute top-12 left-0 right-0 z-50 w-full">
+        <header className="absolute top-10 left-0 right-0 z-50 w-full">
             <div className="flex justify-between items-center w-full px-4 md:px-10 py-6">
                 {/* Logo */}
                 <Link to="/" className="text-base lg:text-lg font-bold tracking-tight flex items-center gap-2 font-inter text-gray-400 z-50">

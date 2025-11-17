@@ -11,7 +11,7 @@ export default function HomePage() {
         <>
             <TopStickyBar
                 show={true}
-                className="bg-gradient-to-r from-orange-600 to-orange-500 text-white py-3 px-4"
+                className="bg-gradient-to-r from-orange-600 to-orange-500 text-white py-2 px-4"
             >
                 <div className="flex items-center justify-center gap-2 text-sm md:text-base font-medium">
                     <span>Limited Time Offer: First 100 Registrations Get</span>

@@ -44,7 +44,7 @@ export default function Hero() {
             </div>
 
             {/* Hero Content */}
-            <div className="relative flex flex-col justify-center items-center text-center flex-grow px-4 mt-8 md:mt-16 z-10">
+            <div className="relative flex flex-col justify-center items-center text-center flex-grow px-4 mt-20 md:mt-32 z-10">
                 <h1 className="text-3xl md:text-6xl font-bold leading-tight max-w-4xl font-inter">
                     <span className="block mb-2 bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
                         {content.title.line1}
