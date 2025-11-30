@@ -93,7 +93,7 @@ export default function Contact() {
                                 </div>
 
                                 {/* Right Side - Contact Information */}
-                                <div className="flex flex-col justify-evenly py-2">
+                                <div className="flex flex-col py-2 gap-y-4 md:gap-y-6 lg:gap-y-0 space-y-4 md:space-y-6 lg:space-y-0 lg:justify-evenly">
                                     {contactInfo.map((info, index) => (
                                         <div key={index} className="flex items-start space-x-3">
                                             <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">

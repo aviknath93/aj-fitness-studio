@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage'
 
 function AppContent() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen w-screen bg-background overflow-x-hidden">
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
